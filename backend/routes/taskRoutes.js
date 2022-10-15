@@ -11,8 +11,8 @@ const {
 const router = express.Router();
 
 
-/* Create Task ==> POST: /api/tasks/create */
-router.post("/create", createTask);
+/* Create Task ==> POST: /api/tasks/ */
+router.post("/", createTask);
 
 /* Get All Tasks ==> GET: /api/tasks/ */
 router.get("/", getAllTasks);
