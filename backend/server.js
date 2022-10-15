@@ -2,13 +2,20 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-
 // create an instance of express called app
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Welcome to Task Manager");
-});
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+// bringing in routes
+const taskRoutes = require("./routes/taskRoutes");
+
+// routing
+app.use("/api/tasks", taskRoutes);
+
 
 // when we deploy app to actual server, that server provides
 // us with a port number, and we use that port from a .env file
