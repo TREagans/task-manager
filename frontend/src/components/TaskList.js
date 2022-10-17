@@ -44,8 +44,7 @@ const TaskList = () => {
 
     } catch (error) {
         // display and log any errors
-        toast.error("Could not create task", { theme: "colored" });
-        console.log("Could not create task", error);
+        toast.error("Could not create task...", error.message, { theme: "colored" });
     }
   };
 
