@@ -1,1 +1,4 @@
 /node_modules
+
+# "**" followed by a slash means match in all directories
+**/.env 
