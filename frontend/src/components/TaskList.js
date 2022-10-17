@@ -39,12 +39,15 @@ const TaskList = () => {
         // request, 1st param is the URL, and the 2nd param is the data
         await axios.post("http://localhost:5000/api/tasks/", formData);
 
+        // send a toast if successful adding task
+        toast.success("Task added successfully!", { theme: "colored" });
+
         // clear form after creating new task
         setFormData({ ...formData, name: ""});
 
-    } catch (error) {
+     } catch (error) {
         // display and log any errors
-        toast.error("Could not create task...", error.message, { theme: "colored" });
+        toast.error("Could not create task...", { theme: "colored" });
     }
   };
 
